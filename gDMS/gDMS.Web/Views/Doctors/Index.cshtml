@@ -1,0 +1,245 @@
+﻿@model gDMS.Web.ViewModels.DoctorViewModel
+@{
+    ViewBag.Title = "Manage Doctors";
+}
+<script src="~/Content/assets/js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        GetDoctors();
+
+        //Create On Click
+        $('#btnSaveDoctor').click(function () {
+            var DoctorName = $('#DoctorName').val();
+            var DoctorDegree = $('#DoctorDegree').val();
+            var DoctorAddress = $('#DoctorAddress').val();
+
+            if (DoctorName == '') {
+                alert("Doctor Name is Required Field!")
+                return false;
+            }
+            else if (DoctorDegree == '') {
+                alert("Degree is Required Field!")
+                return false;
+            }
+            else if (DoctorAddress == '') {
+                alert("Address is Required Field!")
+                return false;
+            }
+            else {
+                CreateDoctor();
+                Clear();
+            }
+        });
+    });
+
+    //get Doctor List | List
+    function GetDoctors() {
+        var bindDoctors = '';
+        $.ajax({
+            async: true,
+            url: '/Doctors/GetDoctors',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    var sLNo = index + 1
+                    bindDoctors += '<tr>' +
+                        '<td>' + sLNo + '</td>' +
+                        '<td>' + value.DoctorName + '</td>' +
+                        '<td>' + value.DoctorDegree + '</td>' +
+                        '<td>' + value.DoctorAddress + '</td>' +
+                        '<td>' + '0' + value.DoctorPhone + '</td>' +
+                        '<td>' + value.IsActive + '</td>' +
+                        '<td>' +
+                        '<a href="/Doctors/Edit/' + value.DoctorID + '"><i class="fa fa-pencil text-info border border-info p-1"></i></a>' +
+                        ' &nbsp; &nbsp;' +
+                        '<a href="" onClick="Delete(' + value.DoctorID + ');"> <i class="fa fa-trash text-danger border border-danger p-1"></i></a>' +
+                        '</td>' +
+                        '</tr>';
+                });
+                $('#tblDoctor').append(bindDoctors);
+            },
+            error: function () {
+                alert("Error occured to load Doctors");
+            }
+        });
+    }
+
+    //Create Doctor |  Create
+    function CreateDoctor() {
+        var DoctorName = $('#DoctorName').val();
+        var DoctorDegree = $('#DoctorDegree').val();
+        var DoctorAddress = $('#DoctorAddress').val();
+        var DoctorPhone = $('#DoctorPhone').val();
+        var IsActive = $('#IsActive').val();
+
+        $.ajax({
+            async: true,
+            url: '/Doctors/CreateDoctor',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: { DoctorName: DoctorName, DoctorDegree: DoctorDegree, DoctorAddress: DoctorAddress, DoctorPhone: DoctorPhone, IsActive: IsActive },
+            success: function (data) {
+                alert("Save Successfully")
+            },
+            error: function () {
+                alert("Error occured to save")
+            }
+        });
+    }
+
+    //Delete Doctor | Delete
+    function DeleteDoctor(DoctorID) {
+        var DoctorID = $('#DoctorID').val();
+        $.ajax({
+            async: true,
+            url: '/Doctors/DeleteDoctor',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: { DoctorID: DoctorID },
+            success: function (data) {
+                alert("Delete Successfully")
+            },
+            error: function () {
+                alert("Error occured to delete")
+            }
+        });
+    }
+
+    function Delete(id) {
+        confirm('Are you sure you want to delete this record?', function (button) {
+            if (button == 'yes') {
+                DeleteDoctor(id);
+                return true;
+            }
+            else {
+                return false;
+            }
+        });
+
+    }
+
+    function Clear() {
+        $('#DoctorName').val('');
+        $('#DoctorDegree').val('');
+        $('#DoctorAddress').val('');
+        $('#DoctorPhone').val('');
+        $('#IsActive').val();
+    }
+</script>
+
+<div class="card mb-4">
+    <div class="card-header bg-secondary bg-opacity-25 text-dark">
+        <b> <i class="fa fa-plus"></i> Add Doctor</b>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(x => x.DoctorID)
+            <div class="container-fluid">
+                <div class="row my-3">
+                    <div class="col-md-6">
+                        <div class="group_input">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(x => x.DoctorName)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.EditorFor(x => x.DoctorName, new { htmlAttributes = new { @class = "inputBox", @Placeholder = "Doctor Name" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="group_input">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(x => x.DoctorDegree)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.EditorFor(x => x.DoctorDegree, new { htmlAttributes = new { @class = "inputBox", @Placeholder = "Doctor Degree" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-md-6">
+                        <div class="group_input">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(x => x.DoctorAddress)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.EditorFor(x => x.DoctorAddress, new { htmlAttributes = new { @class = "inputBox", @Placeholder = "Address" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="group_input">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(x => x.DoctorPhone)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.EditorFor(x => x.DoctorPhone, new { htmlAttributes = new { @class = "inputBox", @Placeholder = "Phone Number" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-md-6">
+                        <div class="group_input">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(x => x.IsActive)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.CheckBoxFor(x => x.IsActive, new { @class = "" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="addBtn d-flex justify-content-end">
+                        <input type="button" value="Save" class="btnSave" id="btnSaveDoctor" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg_primary text-light">
+        <b> <i class="fa fa-list"></i> &nbsp; Doctors List</b>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="bg-primary bg-opacity-25">
+                    <tr>
+                        <th>#slNo</th>
+                        <th>Doctor Name</th>
+                        <th>Degree</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>IsActive?</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tblDoctor">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - gDMS</title>
+    <!-- =================== Vendor CSS ====================== -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="~/Content/assets/css/animate.min.css" rel="stylesheet" />
+    <!-- =================== Custom CSS ====================== -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!------------------------------------------------------------------------------------
+    =============================== Markup Start From Here ===============================
+    ------------------------------------------------------------------------------------->
+    <section class="dashboard_section">
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bx-clinic'></i>
+                <span class="logo_name">DMS</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="/Doctors/Index">
+                        <i class="bx bx-grid-alt"></i>
+                        <span class="link_name">Doctors</span>
+                    </a>
+                </li>
+
+                <!-- User Panel Side Menu  -->
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-cog'></i>
+                            <span class="link_name">User Panel</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Reset Password</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Reception/Billing Side Menu  -->
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-money'></i>
+                            <span class="link_name">Receiption/Billing</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; New Patient Entry/ Add Test</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Old Patient/ Add Test</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Payment/Due Collection</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Collection History</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Patient List/Search Patient</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Doctor Referral Payment</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Doctor Wise Test Category Income</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Daily Test Category Wise Report</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; View My Transaction</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; View All Transaction</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Expense Entry</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Expense Summery</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Cash Book</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Accounts Side Menu  -->
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bxs-user-account'></i>
+                            <span class="link_name">Accounts </span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Reset Password</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- lab X-Ray & USG  -->
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-plus-medical'></i>
+                            <span class="link_name">Lab, X-Ray & USG</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Reset Password</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Administration  -->
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-power-off'></i>
+                            <span class="link_name">Administration</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Reset Password</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Management  -->
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class='bx bx-user-plus'></i>
+                            <span class="link_name">Management</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Reset Password</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-regular fa-circle-dot"></i> &nbsp; Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <div class="home-content">
+                <i class="bx bx-menu"></i>
+                <div class="mt-1">
+                    <h5>Diagnostic Management System</h5>
+                </div>
+            </div>
+
+            <!-- =========== ContentWrapper ========= -->
+
+            <div class="container-fluid mt-3">
+                @RenderBody()
+            </div>
+            <!-- =========== ContentWrapper End ========= -->
+
+        </section>
+    </section>
+    <!------------------------------------------------------------------------------------
+    =============================== Markup  End From There ===============================
+    ------------------------------------------------------------------------------------->
+    <!-- ==================== Vendor JS ====================== -->
+    <script src="~/Content/assets/js/jquery-3.6.1.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/js/font-awesome.js"></script>
+    <!-- ==================== Custom JS ====================== -->
+    <script src="~/Content/assets/js/main.js"></script>
+</body>
+</html>
