@@ -399,3 +399,8 @@ body {
 .addBtn{
     margin-left: -70px;
 }
+
+.tbl_List tbody tr td{
+    padding: 0px!important;
+    margin: 0px!important;
+}

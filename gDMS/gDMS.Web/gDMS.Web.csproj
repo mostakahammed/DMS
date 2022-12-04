@@ -95,16 +95,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\alert.min.css" />
     <Content Include="Content\assets\css\animate.min.css" />
     <Content Include="Content\assets\css\bootstrap.min.css" />
     <Content Include="Content\assets\css\font-awesome.css" />
+    <Content Include="Content\assets\css\img\close.png" />
+    <Content Include="Content\assets\css\img\confirm.png" />
+    <Content Include="Content\assets\css\img\error.png" />
+    <Content Include="Content\assets\css\img\info.png" />
+    <Content Include="Content\assets\css\img\prompt.png" />
+    <Content Include="Content\assets\css\img\warning.png" />
     <Content Include="Content\assets\css\style.css" />
+    <Content Include="Content\assets\css\theme.min.css" />
     <Content Include="Content\assets\images\dr.jpg" />
     <Content Include="Content\assets\images\header_bg.jpg" />
     <Content Include="Content\assets\images\login_bg.png" />
+    <Content Include="Content\assets\js\alert.min.js" />
     <Content Include="Content\assets\js\bootstrap.bundle.min.js" />
     <Content Include="Content\assets\js\font-awesome.js" />
     <Content Include="Content\assets\js\jquery-3.6.1.min.js" />
+    <Content Include="Content\assets\js\jquery-ui.min.js" />
     <Content Include="Content\assets\js\main.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

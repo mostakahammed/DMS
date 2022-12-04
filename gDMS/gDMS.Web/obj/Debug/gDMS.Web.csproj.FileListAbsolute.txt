@@ -1,3 +1,5 @@
+E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\obj\Debug\gDMS.Web.csproj.AssemblyReference.cache
+E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\obj\Debug\gDMS.Web.csproj.CoreCompileInputs.cache
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\bin\gDMS.Web.dll.config
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\bin\gDMS.Web.dll
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\bin\gDMS.Web.pdb
@@ -69,8 +71,6 @@ E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\bin\System.Web.Webpages.Razor.xml
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\bin\System.Web.Helpers.xml
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\bin\System.Web.Mvc.xml
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\obj\Debug\gDMS.Web.csproj.AssemblyReference.cache
-E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\obj\Debug\gDMS.Web.csproj.CoreCompileInputs.cache
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\obj\Debug\gDMS.Web.csproj.CopyComplete
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\obj\Debug\gDMS.Web.dll
 E:\Personal Project\Backend\DMS\gDMS\gDMS.Web\obj\Debug\gDMS.Web.pdb

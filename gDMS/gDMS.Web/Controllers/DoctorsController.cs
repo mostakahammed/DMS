@@ -63,15 +63,52 @@ namespace gDMS.Web.Controllers
             }
         }
 
-        public JsonResult DeleteDoctor(int id)
+        public JsonResult DeleteDoctor(int DoctorID)
         {
             try
             {
-                var objToDelete = _context.Doctors.Where(x => x.DoctorID == id).FirstOrDefault();
+                var objToDelete = _context.Doctors.Where(x => x.DoctorID == DoctorID).FirstOrDefault();
                 _context.Doctors.Remove(objToDelete);
                 _context.SaveChanges();
 
-                return null;
+                return Json(objToDelete, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public JsonResult GetDoctorByID(int DoctorID)
+        {
+            try
+            {
+                var doc = _context.Doctors.Where(x => x.DoctorID == DoctorID).FirstOrDefault();
+
+                return Json(doc, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public JsonResult EditDoctor(DoctorViewModel model)
+        {
+            try
+            {
+                var objToUpdate = _context.Doctors.Where(x => x.DoctorID == model.DoctorID).FirstOrDefault();
+
+                objToUpdate.DoctorID = model.DoctorID;
+                objToUpdate.DoctorName = model.DoctorName;
+                objToUpdate.DoctorDegree = model.DoctorDegree;
+                objToUpdate.DoctorAddress = model.DoctorAddress;
+                objToUpdate.DoctorPhone = model.DoctorPhone;
+                objToUpdate.IsActive = model.IsActive;
+
+                _context.SaveChanges();
+
+                return Json(model, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
